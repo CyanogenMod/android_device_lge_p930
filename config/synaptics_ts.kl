@@ -1,0 +1,7 @@
+#
+# Copyright (c) 2011, LG Electronics
+#
+
+key 102   HOME              VIRTUAL
+key 139   MENU              VIRTUAL
+key 158   BACK              VIRTUAL

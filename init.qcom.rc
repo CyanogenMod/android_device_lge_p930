@@ -1,0 +1,201 @@
+import init.iprj.usb.rc
+
+on boot
+# yennie.kang for AMI306
+    chown compass system /dev/k3g_misc
+    chmod 0660 /dev/k3g_misc
+    chown compass system /dev/k3dh_acc_misc
+    chmod 0660 dev/k3dh_acc_misc
+    chown compass system /dev/ami306
+    chmod 0660 dev/ami306
+    chown compass system /dev/ami306daemon
+    chmod 0660 dev/ami306daemon
+    chown compass system /dev/ami306hal
+    chmod 0660 dev/ami306hal
+    mkdir /data/amit 0770 compass system
+    mkdir /data/gesture 0770 compass system
+    chown system system /sys/devices/virtual/input/lge_touch/keyguard
+
+on init
+    export TMPDIR /data/local/tmp
+    export SECONDARY_STORAGE /mnt/emmc
+    export EXTERNAL_STORAGE /mnt/sdcard
+
+# Backward compatibility
+    symlink /system/bin /bin
+
+# create mountpoints for storage
+    mkdir /mnt/sdcard 0000 system system
+    mkdir /mnt/emmc 0000 system system
+    symlink /mnt/sdcard /sdcard
+
+on emmc-fs
+    mkdir /system
+    wait /dev/block/mmcblk0p27
+
+    mount ext4 /dev/block/mmcblk0p27 /system ro barrier=1 data=ordered
+
+    wait /dev/block/mmcblk0p30
+    exec /system/bin/e2fsck -y /dev/block/mmcblk0p30
+    mount ext4 /dev/block/mmcblk0p30 /data nosuid nodev barrier=1 data=ordered noauto_da_alloc
+
+    #persist
+    wait /dev/block/mmcblk0p12
+    exec /system/bin/e2fsck -y /dev/block/mmcblk0p12
+    mount ext4 /dev/block/mmcblk0p12 /persist nosuid nodev barrier=1 data=ordered
+
+    #cache
+    wait /dev/block/mmcblk0p28
+    exec /system/bin/e2fsck -y /dev/block/mmcblk0p28
+    mount ext4 /dev/block/mmcblk0p28 /cache nosuid nodev barrier=1 data=ordered
+
+    #mpt
+    wait /dev/block/mmcblk0p31
+    exec /system/bin/e2fsck -y /dev/block/mmcblk0p31
+    mount ext4 /dev/block/mmcblk0p31 /mpt nosuid nodev barrier=1 data=ordered
+
+   mkdir /tombstones 0771 system system
+   mount ext4 /dev/block/mmcblk0p22 /tombstones nosuid nodev barrier=1
+   mkdir /tombstones/modem 0771 system system
+   mkdir /tombstones/mdm 0771 system system
+   mkdir /tombstones/lpass 0771 system system
+   mkdir /firmware 0771 system system
+   wait /dev/block/mmcblk0p1
+#[LGE_UPDATE_S] changed /firmware mount options to remove other-writable permission, which is ATT requirement.
+#   mount vfat /dev/block/mmcblk0p1 /firmware ro shortname=lower
+   mount vfat /dev/block/mmcblk0p1 /firmware ro shortname=lower,umask=0003
+#[LGE_UPDATE_E] by jaein.lee(2011.06.29)
+   exec /system/bin/sh /system/etc/init.qcom.modem_links.sh
+
+
+
+on post-fs
+    # mpt partition attribute
+    chown system system /mpt
+    chmod 0771 /mpt
+    mkdir /data/radio 0770 radio radio
+    mkdir /data/misc/sensors 0775 root root
+    write /data/system/sensors/settings 0
+    chmod 0664 /data/system/sensors/settings
+    # We chown/chmod /lgdrm again so because mount is run as root + defaults
+    mkdir /lgdrm 0770 lgdrm lgdrm_acc
+    mount yaffs2 mtd@lgdrm /lgdrm nosuid nodev
+    chown lgdrm lgdrm_acc /lgdrm
+    chmod 0770 /lgdrm
+
+    # create dirs if not exist
+    mkdir /data/lgdrm 0770 lgdrm lgdrm_acc
+    mkdir /data/wmdrm 0770 lgdrm lgdrm_acc
+## ANDY_END
+
+on post-fs-data
+    mkdir /data/misc/wifi 0770 wifi wifi
+    mkdir /data/misc/wifi/sockets 0770 wifi wifi
+    mkdir /data/misc/dhcp 0770 dhcp dhcp
+    chown dhcp dhcp /data/misc/dhcp
+    setprop vold.post_fs_data_done 1
+
+on property:ro.emmc=1
+    start rmt_storage
+
+service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p10 /dev/block/mmcblk0p11 /dev/block/mmcblk0p13
+    class main
+    user root
+    disabled
+
+service qmiproxy /system/bin/qmiproxy
+    class main
+    user radio
+    group radio
+    disabled
+
+service qmuxd /system/bin/qmuxd
+    class main
+    user radio
+    group radio
+    disabled
+
+service qrngd /system/bin/qrngd -f
+    class main
+    user root
+
+service netmgrd /system/bin/netmgrd
+    class main
+    disabled
+
+service qcom-sh /system/bin/sh /init.qcom.sh
+    class core
+    user root
+    oneshot
+
+service qcom-post-boot /system/bin/sh /system/etc/init.qcom.post_boot.sh
+    class main
+    user root
+    disabled
+    oneshot
+
+on property:init.svc.bootanim=stopped
+    start qcom-post-boot
+
+service kickstart /system/bin/qcks l
+    class core
+    user system
+    group system
+    oneshot
+    disabled
+
+# Start kickstart if csfb or svlte2a target
+on property:ro.baseband=csfb
+    chmod 644 /proc/cmdline
+    wait /dev/ttyHSL1
+    mkdir /data/qcks 0770 system system
+    exec /system/bin/sh /system/etc/init.qcom.mdm_links.sh
+    start kickstart
+
+service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
+    class main
+    user root
+    disabled
+
+service thermald /system/bin/thermald
+    class main
+    user root
+    group root
+    disabled
+
+service time_daemon /system/bin/time_daemon
+    user system
+    group system qcom_oncrpc
+    oneshot
+    disabled
+
+on property:dev.bootcomplete=1
+    mkdir /data/time/ 0700
+    chown system system /data/time
+    chmod 0640 /dev/rtc0
+    chown root system /dev/rtc0
+    start time_daemon
+
+service dhcpcd_wlan0 /system/bin/dhcpcd -BKAL
+    class core
+    disabled
+    oneshot
+
+service iprenew_wlan0 /system/bin/dhcpcd -n wlan0
+    class main
+    disabled
+    oneshot
+
+on property:init.svc.wpa_supplicant=stopped
+    stop dhcpcd_wlan0
+
+service wpa_supplicant /system/bin/wpa_supplicant -Dwext -iwlan0 -c/data/misc/wifi/wpa_supplicant.conf
+    class main
+    socket wpa_wlan0 dgram 660 wifi wifi
+    group system wifi inet
+    disabled
+    oneshot
+
+on property:gsm.operator.numeric=*
+    setprop persist.radio.nitz_plmn_0 ""
+    setprop persist.radio.nitz_plmn ""
