@@ -92,7 +92,15 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libmm-omxcore \
     libOmxCore
-    
+
+# Bluetooth
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilt/init.qcom.bt.sh:system/bin/init.qcom.bt.sh
+
+PRODUCT_PACKAGES += \
+    hcitool \
+    hciconfig \
+    hwaddrs
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_p930

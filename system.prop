@@ -30,4 +30,6 @@ ro.opengles.version=131072
 com.qc.hardware=true
 ro.sf.compbypass.enable=1
 
+ro.bt.bdaddr_path=/data/misc/bd_addr
+
 ro.product.camera=lgp930

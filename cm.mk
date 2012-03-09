@@ -11,7 +11,7 @@ PRODUCT_NAME := cm_p930
 
 # Release name and versioning
 PRODUCT_RELEASE_NAME := OptimusLTE
-PRODUCT_VERSION_DEVICE_SPECIFIC := -SelfKANG0
+PRODUCT_VERSION_DEVICE_SPECIFIC :=
 
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := p930
