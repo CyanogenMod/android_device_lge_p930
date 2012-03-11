@@ -30,6 +30,13 @@ on boot
     chown bluetooth bluetooth /sys/devices/platform/msm_serial_hs.0/clock
     chmod 0660 /sys/devices/platform/msm_serial_hs.0/clock
 
+    chmod 0444 /proc/cmdline
+    chown system system /sys/devices/platform/msm-charger/at_charge
+    chown system system /sys/devices/platform/msm-charger/at_chcomp
+    chown system system /sys/devices/platform/msm-charger/at_fuelrst
+    chown system system /sys/devices/platform/msm-charger/at_fuelval
+    chown system system /sys/devices/platform/msm-charger/at_pmrst
+    chown system system /sys/devices/platform/msm-charger/at_batl
 
 on init
     export TMPDIR /data/local/tmp
@@ -65,6 +72,7 @@ on emmc-fs
     mount ext4 /dev/block/mmcblk0p28 /cache nosuid nodev barrier=1 data=ordered
 
     #mpt
+    mkdir /mpt 0771 system system
     wait /dev/block/mmcblk0p31
     exec /system/bin/e2fsck -y /dev/block/mmcblk0p31
     mount ext4 /dev/block/mmcblk0p31 /mpt nosuid nodev barrier=1 data=ordered
@@ -161,7 +169,6 @@ service kickstart /system/bin/qcks l
 
 # Start kickstart if csfb or svlte2a target
 on property:ro.baseband=csfb
-    chmod 644 /proc/cmdline
     wait /dev/ttyHSL1
     mkdir /data/qcks 0770 system system
     exec /system/bin/sh /system/etc/init.qcom.mdm_links.sh
@@ -216,10 +223,6 @@ service hciattach /system/bin/init.qcom.bt.sh
     #user bluetooth
     group bluetooth net_bt_admin
     disabled
-
-on property:gsm.operator.numeric=*
-    setprop persist.radio.nitz_plmn_0 ""
-    setprop persist.radio.nitz_plmn ""
 
 on property:service.brcm.bt.mac=*
     exec /system/bin/hwaddrs
