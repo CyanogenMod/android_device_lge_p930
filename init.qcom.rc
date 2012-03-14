@@ -191,12 +191,12 @@ service time_daemon /system/bin/time_daemon
     oneshot
     disabled
 
-on property:dev.bootcomplete=1
-    mkdir /data/time/ 0700
-    chown system system /data/time
-    chmod 0640 /dev/rtc0
-    chown root system /dev/rtc0
-    start time_daemon
+#on property:dev.bootcomplete=1
+#    mkdir /data/time/ 0700
+#    chown system system /data/time
+#    chmod 0640 /dev/rtc0
+#    chown root system /dev/rtc0
+#    start time_daemon
 
 service dhcpcd_wlan0 /system/bin/dhcpcd -BKAL
     class core
