@@ -75,12 +75,14 @@ PRODUCT_COPY_FILES += \
 # HW HALS
 
 PRODUCT_PACKAGES += \
+    hdmid \
     libgenlock \
     libmemalloc \
     liboverlay \
     gralloc.msm8660 \
     hwcomposer.msm8660 \
     copybit.msm8660 \
+    gps.p930 \
     audio.primary.p930 \
     audio.a2dp.default
 

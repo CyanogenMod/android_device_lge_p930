@@ -107,7 +107,7 @@
 /dev/qmi1                 0640   radio      radio
 /dev/qmi2                 0640   radio      radio
 /dev/bus/usb/*            0660   root       usb
-/dev/gemini0              0660   system     system
+/dev/gemini0              0660   media      system
 /dev/mdm                  0660   system     system
 /dev/ttyHSL1              0660   system     system
 /dev/tty_sdio_00          0660   system     system
@@ -165,8 +165,6 @@
 /dev/isdbt                0666  root         root
 /sys/devices/virtual/usb_composite/*   enable      0664  root   system
 
-# FeliCa properties
-#if defined(CONFIG_LGE_FELICA)	
 /dev/felica               0666  root         root
 /dev/felica_cal           0666  root         root
 /dev/felica_cen           0666  root         root
@@ -176,4 +174,7 @@
 /dev/ttyHSL3              0666  root         root
 /dev/i2c-0                0666  root         root
 /dev/genlock              0666  system	     graphics
-#endif
+
+## GPS
+/dev/oncrpc/00000000:0    0660  system       qcom_oncrpc
+/dev/oncrpc/3000008c:00050000 0660   system       qcom_oncrpc

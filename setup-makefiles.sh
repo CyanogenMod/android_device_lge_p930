@@ -72,7 +72,6 @@ EOF
 PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/lights.msm8660.so:system/lib/hw/lights.msm8660.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/sensors.msm8660.so:system/lib/hw/sensors.msm8660.so
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/gps.default.so:system/lib/hw/gps.default.so
 
 # OMX FW
 PRODUCT_COPY_FILES += \\
@@ -162,6 +161,10 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libgemini.so:system/lib/libgemini.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libchromatix_imx105_preview.so:system/lib/libchromatix_imx105_preview.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/camera.msm8660.so:system/lib/hw/camera.msm8660.so
+
+## Sensors daemon
+PRODUCT_COPY_FILES += \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/bin/ami304d:system/bin/ami304d
 
 ## OMX Video Encoder - temporary until we can build CAF's
 PRODUCT_COPY_FILES += \\
