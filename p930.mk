@@ -24,6 +24,7 @@ else
 endif
 
 PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/config/media_profiles.xml:system/etc/media_profiles.xml \
     $(LOCAL_KERNEL):kernel
 
 $(call inherit-product, build/target/product/full.mk)
