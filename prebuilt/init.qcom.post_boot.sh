@@ -62,7 +62,9 @@ case "$target" in
 # cpufreq interactive governor: timer 20ms, min sample 20ms, hispeed 700MHz
          echo 20000 > /sys/devices/system/cpu/cpufreq/interactive/timer_rate
          echo 20000 > /sys/devices/system/cpu/cpufreq/interactive/min_sample_time
-         echo 700000 > /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq
+         echo 600000 > /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq
+
+         echo 600000 > /sys/devices/system/cpu/cpu0/cpufreq/screen_off_max_freq
 
 	 chown root.system /sys/devices/system/cpu/mfreq
 	 chmod 220 /sys/devices/system/cpu/mfreq
