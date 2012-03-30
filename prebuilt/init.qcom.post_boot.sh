@@ -43,27 +43,28 @@ case "$target" in
 	 echo 1 > /sys/module/pm_8x60/modes/cpu1/power_collapse/idle_enabled
 	 echo 1 > /sys/module/pm_8x60/modes/cpu0/standalone_power_collapse/idle_enabled
 	 echo 1 > /sys/module/pm_8x60/modes/cpu1/standalone_power_collapse/idle_enabled
-#	 echo "ondemand" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
-#	 echo "ondemand" > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
-#	 echo 50000 > /sys/devices/system/cpu/cpu0/cpufreq/ondemand/sampling_rate
-#	 echo 50000 > /sys/devices/system/cpu/cpu1/cpufreq/ondemand/sampling_rate
-#	 echo 90 > /sys/devices/system/cpu/cpu0/cpufreq/ondemand/up_threshold
-#	 echo 90 > /sys/devices/system/cpu/cpu1/cpufreq/ondemand/up_threshold
-#	 echo 1 > /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy
-#	 echo 4 > /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
-#	 chown system /sys/devices/system/cpu/cpu0/cpufreq/ondemand/sampling_rate
-#	 chown system /sys/devices/system/cpu/cpu1/cpufreq/ondemand/sampling_rate
+# cpufreq ondemand gov
+	 echo "ondemand" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor
+	 echo "ondemand" > /sys/devices/system/cpu/cpu1/cpufreq/scaling_governor
+	 echo 50000 > /sys/devices/system/cpu/cpu0/cpufreq/ondemand/sampling_rate
+	 echo 50000 > /sys/devices/system/cpu/cpu1/cpufreq/ondemand/sampling_rate
+	 echo 90 > /sys/devices/system/cpu/cpu0/cpufreq/ondemand/up_threshold
+	 echo 90 > /sys/devices/system/cpu/cpu1/cpufreq/ondemand/up_threshold
+	 echo 1 > /sys/devices/system/cpu/cpufreq/ondemand/io_is_busy
+	 echo 4 > /sys/devices/system/cpu/cpufreq/ondemand/sampling_down_factor
+	 chown system /sys/devices/system/cpu/cpu0/cpufreq/ondemand/sampling_rate
+	 chown system /sys/devices/system/cpu/cpu1/cpufreq/ondemand/sampling_rate
 #	 echo 384000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
 #	 echo 384000 > /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq
-#	 chown system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
-#	 chown system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
-#	 chown system /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
-#	 chown system /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq
+	 chown system /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq
+	 chown system /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq
+	 chown system /sys/devices/system/cpu/cpu1/cpufreq/scaling_max_freq
+	 chown system /sys/devices/system/cpu/cpu1/cpufreq/scaling_min_freq
 # cpufreq interactive governor: timer 20ms, min sample 20ms, hispeed 700MHz
-         echo 20000 > /sys/devices/system/cpu/cpufreq/interactive/timer_rate
-         echo 20000 > /sys/devices/system/cpu/cpufreq/interactive/min_sample_time
-         echo 600000 > /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq
-
+#         echo 20000 > /sys/devices/system/cpu/cpufreq/interactive/timer_rate
+#         echo 20000 > /sys/devices/system/cpu/cpufreq/interactive/min_sample_time
+#         echo 600000 > /sys/devices/system/cpu/cpufreq/interactive/hispeed_freq
+#
          echo 600000 > /sys/devices/system/cpu/cpu0/cpufreq/screen_off_max_freq
 
 	 chown root.system /sys/devices/system/cpu/mfreq
