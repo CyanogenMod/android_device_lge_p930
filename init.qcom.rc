@@ -38,6 +38,10 @@ on boot
     chown system system /sys/devices/platform/msm-charger/at_pmrst
     chown system system /sys/devices/platform/msm-charger/at_batl
 
+    # Torch perms
+    chown system camera /sys/class/leds/spotlight/brightness
+    chmod 0660 /sys/class/leds/spotlight/brightness
+
 on init
     export TMPDIR /data/local/tmp
     export SECONDARY_STORAGE /mnt/emmc
