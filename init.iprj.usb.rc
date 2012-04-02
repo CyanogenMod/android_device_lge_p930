@@ -8,11 +8,12 @@ on boot
     write /sys/class/android_usb/android0/enable 0
     write /sys/class/android_usb/android0/idVendor 18D1
     write /sys/class/android_usb/android0/idProduct 618e
-    write /sys/class/android_usb/android0/functions ptp,adb
+    write /sys/class/android_usb/android0/functions mass_storage,adb
     write /sys/class/android_usb/android0/iManufacturer $ro.product.manufacturer
     write /sys/class/android_usb/android0/iProduct $ro.product.model
     write /sys/class/android_usb/android0/enable 1
-    setprop sys.usb.state ptp,adb
+    setprop sys.usb.state mass_storage,adb
+    setprop persist.sys.usb.config mass_storage,adb
     stop adbd
     start adbd
 
