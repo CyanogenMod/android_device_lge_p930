@@ -7,11 +7,11 @@ ro.sf.lcd_density=320
 mobiledata.interfaces=rmnet_sdio0,rmnet_sdio1
 rild.libpath=/system/lib/libril-qc-qmi-1.so
 rild.libargs=-d /dev/smd0
-ril.subscription.types=NV,RUIM
+#ril.subscription.types=NV,RUIM
 DEVICE_PROVISIONED=1
-ro.telephony.default_network=3
+ro.telephony.default_network=9
 ro.telephony.ril_class=LGEQualcommUiccRIL
-ro.telephony.ril.v3=facilitylock,datacall,signalstrength,icccardstatus,singlepdp,qcomuiccstack
+ro.telephony.ril.v3=facilitylock,datacall,icccardstatus,singlepdp,qcomuiccstack
 
 wifi.interface=wlan0
 debug.fb.rgb565=0
