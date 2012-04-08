@@ -29,4 +29,8 @@ ro.bt.bdaddr_path=/data/misc/bd_addr
 
 ro.product.camera=lgp930
 
+# QCOM CpuGovernorService
+dev.pm.dyn_samplingrate=1
 
+# system prop for sending power off request to RIL during phone shutdown
+ro.ril.shutdown=true
