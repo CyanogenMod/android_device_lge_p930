@@ -161,5 +161,6 @@
                   specified -->
     <string name="default_wallpaper_component">com.android.phasebeam/.PhaseBeamWallpaper</string>
 
+    <bool name="config_disableMenuKeyInLockScreen">true</bool>
 
 </resources>
