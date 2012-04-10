@@ -1,5 +1,9 @@
 import init.iprj.usb.rc
 
+on early-boot
+    # set RLIMIT_MEMLOCK to 64MB
+    setrlimit 8 67108864 67108864
+
 on boot
 # yennie.kang for AMI306
     chown compass system /dev/k3g_misc
