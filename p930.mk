@@ -95,6 +95,8 @@ PRODUCT_PACKAGES += \
     libdivxdrmdecrypt \
     libOmxVdec \
     libOmxVenc \
+    libOmxAacEnc \
+    libOmxAmrEnc \
     libmm-omxcore \
     libOmxCore
 
