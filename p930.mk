@@ -17,15 +17,8 @@ DEVICE_PACKAGE_OVERLAYS += device/lge/p930/overlay
 PRODUCT_AAPT_CONFIG := normal hdpi xhdpi
 PRODUCT_AAPT_PREF_CONFIG := xhdpi
 
-ifeq ($(TARGET_PREBUILT_KERNEL),)
-	LOCAL_KERNEL := device/lge/p930/kernel
-else
-	LOCAL_KERNEL := $(TARGET_PREBUILT_KERNEL)
-endif
-
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/config/media_profiles.xml:system/etc/media_profiles.xml \
-    $(LOCAL_KERNEL):kernel
+    $(LOCAL_PATH)/config/media_profiles.xml:system/etc/media_profiles.xml
 
 $(call inherit-product, build/target/product/full.mk)
 
