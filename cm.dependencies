@@ -1,7 +1,7 @@
 [
  {
    "repository": "lge-kernel-iproj",
-   "target_path": "kernel/p930",
+   "target_path": "kernel/lge/p930",
    "branch": "android-msm-2.6.35"
  }
 ]
