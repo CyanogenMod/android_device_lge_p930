@@ -12,6 +12,7 @@ DEVICE_PROVISIONED=1
 ro.telephony.default_network=9
 ro.telephony.ril_class=LGEQualcommUiccRIL
 ro.telephony.ril.v3=facilitylock,datacall,icccardstatus,singlepdp,qcomuiccstack
+telephony.lteOnGsmDevice=1
 
 wifi.interface=wlan0
 debug.fb.rgb565=0
