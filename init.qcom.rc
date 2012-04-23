@@ -48,7 +48,6 @@ on boot
 
 on init
     export TMPDIR /data/local/tmp
-    export SECONDARY_STORAGE /mnt/emmc
     export EXTERNAL_STORAGE /mnt/sdcard
 
 # Backward compatibility
@@ -56,7 +55,6 @@ on init
 
 # create mountpoints for storage
     mkdir /mnt/sdcard 0000 system system
-    mkdir /mnt/emmc 0000 system system
     symlink /mnt/sdcard /sdcard
 
 on emmc-fs
