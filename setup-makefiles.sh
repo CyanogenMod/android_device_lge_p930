@@ -166,6 +166,11 @@ PRODUCT_COPY_FILES += \\
 PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/bin/ami304d:system/bin/ami304d
 
+## QCOM prop webkit improvements
+PRODUCT_COPY_FILES += \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libv8.so:obj/lib/libv8.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libv8.so:system/lib/libv8.so
+
 EOF
 
 (cat << EOF) | sed s/__DEVICE__/$DEVICE/g | sed s/__VENDOR__/$VENDOR/g > ../../../vendor/$VENDOR/$DEVICE/BoardConfigVendor.mk

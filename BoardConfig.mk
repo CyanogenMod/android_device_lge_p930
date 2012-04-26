@@ -63,6 +63,9 @@ BOARD_USES_QCOM_LIBS := true
 BOARD_USE_QCOM_PMEM := true
 BOARD_EGL_CFG := device/lge/p930/egl.cfg
 
+TARGET_FORCE_CPU_UPLOAD := true
+DYNAMIC_SHARED_LIBV8SO := true
+
 BOARD_WLAN_DEVICE := bcm4330
 WIFI_DRIVER_FW_PATH_STA         := "/system/etc/wl/rtecdc.bin"
 WIFI_DRIVER_FW_PATH_AP          := "/system/etc/wl/rtecdc-apsta.bin"
