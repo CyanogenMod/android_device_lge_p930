@@ -122,6 +122,9 @@ PRODUCT_COPY_FILES += \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnetmgr.so:system/lib/libnetmgr.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libtime_genoff.so:system/lib/libtime_genoff.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/liboncrpc.so:system/lib/liboncrpc.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/liboncrpc.so:obj/lib/liboncrpc.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnv.so:system/lib/libnv.so \\
+    vendor/__VENDOR__/__DEVICE__/proprietary/lib/libnv.so:obj/lib/libnv.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libdsm.so:system/lib/libdsm.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libqueue.so:system/lib/libqueue.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/libtime_remote_atom.so:system/lib/libtime_remote_atom.so

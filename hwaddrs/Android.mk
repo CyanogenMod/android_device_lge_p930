@@ -21,7 +21,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES := getmac.c
 
 LOCAL_PRELINK_MODULE := false
-LOCAL_SHARED_LIBRARIES := libcutils
+LOCAL_SHARED_LIBRARIES := libcutils libnv liboncrpc
 LOCAL_MODULE := hwaddrs
 
 include $(BUILD_EXECUTABLE)
