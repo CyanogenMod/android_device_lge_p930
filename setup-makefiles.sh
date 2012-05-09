@@ -70,7 +70,6 @@ EOF
 
 # HAL
 PRODUCT_COPY_FILES += \\
-    vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/lights.msm8660.so:system/lib/hw/lights.msm8660.so \\
     vendor/__VENDOR__/__DEVICE__/proprietary/lib/hw/sensors.msm8660.so:system/lib/hw/sensors.msm8660.so
 
 # OMX FW

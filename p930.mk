@@ -76,6 +76,7 @@ PRODUCT_PACKAGES += \
     gralloc.msm8660 \
     hwcomposer.msm8660 \
     copybit.msm8660 \
+    lights.msm8660 \
     gps.p930 \
     audio.primary.p930 \
     audio_policy.msm8660 \
