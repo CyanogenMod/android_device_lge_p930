@@ -23,8 +23,8 @@ PRODUCT_COPY_FILES += \
 $(call inherit-product, build/target/product/full.mk)
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/init.qcom.rc:root/init.qcom.rc \
-    $(LOCAL_PATH)/ueventd.qcom.rc:root/ueventd.qcom.rc
+    $(LOCAL_PATH)/init.iprj.rc:root/init.iprj.rc \
+    $(LOCAL_PATH)/ueventd.iprj.rc:root/ueventd.iprj.rc
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/init.iprj.usb.rc:root/init.iprj.usb.rc \
