@@ -104,28 +104,9 @@ PRODUCT_PACKAGES += \
     hwaddrs
 
 # Charger mode
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/chargermode/chargerimages/battery_charging_01.rle:root/chargerimages/battery_charging_01.rle \
-    $(LOCAL_PATH)/chargermode/chargerimages/battery_charging_02.rle:root/chargerimages/battery_charging_02.rle \
-    $(LOCAL_PATH)/chargermode/chargerimages/battery_charging_03.rle:root/chargerimages/battery_charging_03.rle \
-    $(LOCAL_PATH)/chargermode/chargerimages/battery_charging_04.rle:root/chargerimages/battery_charging_04.rle \
-    $(LOCAL_PATH)/chargermode/chargerimages/battery_charging_05.rle:root/chargerimages/battery_charging_05.rle \
-    $(LOCAL_PATH)/chargermode/chargerimages/battery_charging_06.rle:root/chargerimages/battery_charging_06.rle \
-    $(LOCAL_PATH)/chargermode/chargerimages/battery_charging_warning.rle:root/chargerimages/battery_charging_warning.rle \
-    $(LOCAL_PATH)/chargermode/chargerimages/battery_wait_01.rle:root/chargerimages/battery_wait_01.rle \
-    $(LOCAL_PATH)/chargermode/chargerimages/battery_wait_02.rle:root/chargerimages/battery_wait_02.rle \
-    $(LOCAL_PATH)/chargermode/chargerimages/bg_white.rle:root/chargerimages/bg_white.rle \
-    $(LOCAL_PATH)/chargermode/chargerimages/bg_wireless02.rle:root/chargerimages/bg_wireless02.rle \
-    $(LOCAL_PATH)/chargermode/chargerimages/bg_wireless.rle:root/chargerimages/bg_wireless.rle \
-    $(LOCAL_PATH)/chargermode/chargerimages/black_bg.rle:root/chargerimages/black_bg.rle \
-    $(LOCAL_PATH)/chargermode/chargerimages/charge_01.rle:root/chargerimages/charge_01.rle \
-    $(LOCAL_PATH)/chargermode/chargerimages/charge_03.rle:root/chargerimages/charge_03.rle \
-    $(LOCAL_PATH)/chargermode/chargerimages/charge_04.rle:root/chargerimages/charge_04.rle \
-    $(LOCAL_PATH)/chargermode/chargerimages/stop_01.rle:root/chargerimages/stop_01.rle \
-    $(LOCAL_PATH)/chargermode/chargerimages/stop_02.rle:root/chargerimages/stop_02.rle \
-    $(LOCAL_PATH)/chargermode/chargerimages/stop_03.rle:root/chargerimages/stop_03.rle \
-    $(LOCAL_PATH)/chargermode/chargerimages/stop_04.rle:root/chargerimages/stop_04.rle \
-    $(LOCAL_PATH)/chargermode/chargerlogo:root/sbin/chargerlogo
+PRODUCT_PACKAGES += \
+    charger \
+    charger_res_images
 
 PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
 PRODUCT_NAME := full_p930
