@@ -11,7 +11,7 @@ rild.libargs=-d /dev/smd0
 DEVICE_PROVISIONED=1
 ro.telephony.default_network=9
 ro.telephony.ril_class=LGEQualcommUiccRIL
-ro.telephony.ril.v3=datacall,icccardstatus,qcomuiccstack
+ro.telephony.ril.v3=qcomuiccstack
 telephony.lteOnGsmDevice=1
 
 wifi.interface=wlan0

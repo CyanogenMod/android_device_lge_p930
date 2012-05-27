@@ -28,6 +28,7 @@ lib/libril-qc-qmi-1.so
 lib/libril-qcril-hook-oem.so
 lib/libqmi.so
 lib/libril.so
+lib/libqdi.so
 lib/libqmi.so
 lib/libdiag.so
 lib/libdsutils.so
