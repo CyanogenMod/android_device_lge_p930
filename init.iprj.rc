@@ -128,6 +128,10 @@ service chargerlogo /charger
     class charger
     user root
 
+on property:init.svc.chargerlogo=running
+    setprop sys.usb.config adb
+    start rmt_storage
+
 service rmt_storage /system/bin/rmt_storage /dev/block/mmcblk0p10 /dev/block/mmcblk0p11 /dev/block/mmcblk0p13
     class core
     user root
