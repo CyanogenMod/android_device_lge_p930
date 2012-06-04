@@ -162,4 +162,7 @@
     <string name="default_wallpaper_component">com.android.phasebeam/.PhaseBeamWallpaper</string>
 
     <bool name="config_autoBrightnessButtonKeyboard">false</bool>
+
+    <!-- Menu+Home+Back -->
+    <integer name="config_deviceHardwareKeys">7</integer>
 </resources>
