@@ -29,7 +29,7 @@ BOARD_KERNEL_PAGESIZE := 2048
 BOARD_FORCE_RAMDISK_ADDRESS := 0x41a00000
 
 # Try to build the kernel
-TARGET_KERNEL_CONFIG := cyanogenmod_iprj_defconfig
+TARGET_KERNEL_CONFIG := cyanogenmod_p930_defconfig
 # Keep this as a fallback
 TARGET_PREBUILT_KERNEL := device/lge/p930/kernel
 
@@ -44,7 +44,7 @@ BOARD_TOUCH_RECOVERY := true
 BOARD_CUSTOM_GRAPHICS := ../../../device/lge/p930/recovery-gfx.c
 TARGET_USERIMAGES_USE_EXT4 := true
 
-COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DUSES_AUDIO_LEGACY -DQCOM_ROTATOR_KERNEL_FORMATS
+COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DQCOM_ROTATOR_KERNEL_FORMATS -DHAVE_FM_RADIO -DWITH_QCOM_LPA
 
 TARGET_SPECIFIC_HEADER_PATH := device/lge/p930/include
 
@@ -53,31 +53,33 @@ USE_OPENGL_RENDERER := true
 # QCOM stuffs
 BOARD_USES_QCOM_HARDWARE := true
 TARGET_USES_OVERLAY := true
-TARGET_HAVE_BYPASS  := false
+TARGET_HAVE_BYPASS  := true
 TARGET_USES_C2D_COMPOSITION := true
 TARGET_USES_GENLOCK := true
 TARGET_QCOM_HDMI_OUT := true
 TARGET_QCOM_HDMI_RESOLUTION_AUTO := true
-TARGET_FORCE_CPU_UPLOAD := true
+TARGET_FORCE_CPU_UPLOAD := false
 BOARD_USES_QCOM_LIBS := true
-BOARD_USE_QCOM_PMEM := true
 BOARD_EGL_CFG := device/lge/p930/egl.cfg
+TARGET_USES_ION := true
 
-TARGET_FORCE_CPU_UPLOAD := true
 DYNAMIC_SHARED_LIBV8SO := true
 
-BOARD_WLAN_DEVICE := bcm4330
-WIFI_DRIVER_FW_PATH_STA         := "/system/etc/wl/rtecdc.bin"
-WIFI_DRIVER_FW_PATH_AP          := "/system/etc/wl/rtecdc-apsta.bin"
-WIFI_DRIVER_MODULE_NAME         := "wireless"
-WIFI_DRIVER_MODULE_PATH         := "/system/lib/modules/wireless.ko"
-WIFI_DRIVER_MODULE_ARG          := "firmware_path=/etc/wl/rtecdc.bin nvram_path=/etc/wl/nvram.txt config_path=/data/misc/wifi/config"
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_wext
+# Wifi related defines
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
 WPA_SUPPLICANT_VERSION := VER_0_8_X
-WIFI_DRIVER_HAS_LGE_SOFTAP      := true
-BOARD_WPA_SUPPLICANT_DRIVER := WEXT
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+BOARD_WLAN_DEVICE := bcmdhd
+WIFI_DRIVER_FW_PATH_PARAM := "/data/misc/wifi/firmware_path"
+WIFI_DRIVER_FW_PATH_STA := "/system/etc/firmware/fw_bcmdhd.bin"
+WIFI_DRIVER_FW_PATH_P2P := "/system/etc/firmware/fw_bcmdhd_p2p.bin"
+WIFI_DRIVER_FW_PATH_AP := "/system/etc/firmware/fw_bcmdhd_apsta.bin"
 
-BOARD_USES_AUDIO_LEGACY := true
+#BOARD_USES_AUDIO_LEGACY := true
+#TARGET_PROVIDES_LIBAUDIO := true
+TARGET_USES_QCOM_LPA := true
 
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true

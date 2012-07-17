@@ -40,13 +40,13 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/config/ffa-keypad_qwerty.kl:system/usr/keylayout/ffa-keypad_qwerty.kl \
     $(LOCAL_PATH)/config/i_atnt-keypad.kl:system/usr/keylayout/i_atnt-keypad.kl \
     $(LOCAL_PATH)/config/pmic8058_pwrkey.kl:system/usr/keylayout/pmic8058_pwrkey.kl \
-    $(LOCAL_PATH)/config/synaptics_ts.kl:system/usr/keylayout/synaptics_ts.kl \
-    $(LOCAL_PATH)/config/synaptics_ts.idc:system/usr/idc/synaptics_ts.idc \
+    $(LOCAL_PATH)/config/synaptics_ts.kl:system/usr/keylayout/touch_dev.kl \
+    $(LOCAL_PATH)/config/synaptics_ts.idc:system/usr/idc/touch_dev.idc \
     $(LOCAL_PATH)/config/thermald.conf:system/etc/thermald.conf
 
 # WiFi
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/config/nvram.txt:system/etc/wl/nvram.txt \
+    $(LOCAL_PATH)/config/bcmdhd.cal:system/etc/wifi/bcmdhd.cal \
     $(LOCAL_PATH)/config/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
     $(LOCAL_PATH)/prebuilt/wireless.ko:system/lib/modules/wireless.ko
 
@@ -79,7 +79,6 @@ PRODUCT_PACKAGES += \
     copybit.msm8660 \
     lights.msm8660 \
     gps.p930 \
-    audio.primary.p930 \
     audio_policy.msm8660 \
     audio.a2dp.default \
     com.android.future.usb.accessory

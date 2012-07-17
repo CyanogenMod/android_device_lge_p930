@@ -1,4 +1,3 @@
-#      http
 lib/hw/sensors.msm8660.so
 etc/firmware/vidc_1080p.fw
 etc/firmware/BCM4330B1_002.001.003.0243.0308.hcd
@@ -7,6 +6,9 @@ lib/egl/libGLESv2_adreno200.so
 lib/egl/libGLESv1_CM_adreno200.so
 lib/egl/libEGL_adreno200.so
 lib/egl/eglsubAndroid.so
+etc/firmware/fw_bcmdhd_apsta.bin
+etc/firmware/fw_bcmdhd.bin
+etc/firmware/fw_bcmdhd_p2p.bin
 etc/firmware/yamato_pfp.fw
 etc/firmware/yamato_pm4.fw
 etc/firmware/leia_pfp_470.fw
@@ -47,10 +49,7 @@ bin/thermald
 bin/mpdecision
 lib/libthermal_mitigation_fusion.so
 lib/libthermal_mitigation.so
-etc/wl/rtecdc.bin
-etc/wl/rtecdc-apsta.bin
 lib/libaudioalsa.so
-lib/libaudio.so
 lib/libaudcal.so
 lib/libacdbmapper.so
 lib/libacdbloader.so
@@ -58,6 +57,7 @@ lib/liba2dp.so
 lib/libmmjps.so
 lib/libmmjpeg.so
 lib/libmmipl.so
+lib/libOlaFaceDetector.so
 lib/liboemcamera.so
 lib/libmmmpod.so
 lib/libmmmpo.so
@@ -68,3 +68,4 @@ lib/libchromatix_imx105_preview.so
 lib/hw/camera.msm8660.so
 bin/ami304d
 lib/libv8.so
+lib/hw/audio.primary.msm8660.so

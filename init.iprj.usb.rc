@@ -3,7 +3,7 @@ on init
     write /sys/class/android_usb/android0/f_rndis/manufacturer LGE
     write /sys/class/android_usb/android0/f_rndis/vendorID 1004
     write /sys/class/android_usb/android0/f_rndis/wceis 1
-    write /sys/class/android_usb/android0/f_acm/instances 3
+    write /sys/class/android_usb/android0/f_acm/acm_transports tty,sdio
 
 on boot
     write /sys/class/android_usb/android0/enable 0

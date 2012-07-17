@@ -59,7 +59,7 @@ tssitime=1
 
 sd_oobonly=1
 sd_gpout=0
-sd_gpval=1
+sd_gpval=0
 
 #for BT-Coex
 btc_params80=0

@@ -180,3 +180,5 @@
 /dev/oncrpc/3000008c:00050000 0660   system       qcom_oncrpc
 
 /dev/rfkill               0660   wifi       wifi
+
+/dev/ion                  0664   system     system
