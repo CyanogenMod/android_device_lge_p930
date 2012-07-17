@@ -14,6 +14,7 @@ etc/firmware/yamato_pm4.fw
 etc/firmware/leia_pfp_470.fw
 etc/firmware/leia_pm4_470.fw
 lib/libC2D2.so
+lib/libc2d2_z180.so
 lib/libOpenVG.so
 lib/libgsl.so
 lib/libsc-a2xx.so
@@ -28,7 +29,6 @@ bin/ks
 bin/time_daemon
 lib/libril-qc-qmi-1.so
 lib/libril-qcril-hook-oem.so
-lib/libqmi.so
 lib/libril.so
 lib/libqdi.so
 lib/libqmi.so
@@ -69,3 +69,4 @@ lib/hw/camera.msm8660.so
 bin/ami304d
 lib/libv8.so
 lib/hw/audio.primary.msm8660.so
+lib/hw/audio_policy.msm8660.so

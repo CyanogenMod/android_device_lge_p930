@@ -4,6 +4,7 @@
 -include device/lge/iprj-common/BoardConfigCommon.mk
 
 TARGET_BOOTLOADER_BOARD_NAME := p930
+TARGET_OTA_ASSERT_DEVICE := p930
 
 # Try to build the kernel
 TARGET_KERNEL_CONFIG := cyanogenmod_p930_defconfig
