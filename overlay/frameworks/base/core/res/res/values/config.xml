@@ -143,6 +143,7 @@
         <item>"mobile_supl,3,0,2,60000,true"</item>
         <item>"mobile_hipri,5,0,3,60000,true"</item>
         <item>"mobile_bluetooth,7,7,1,-1,true"</item>
+        <item>"wifi_p2p,13,1,0,-1,true"</item>
     </string-array>
 
     <!-- An Array of "[ConnectivityManager connectionType],
@@ -165,4 +166,6 @@
 
     <!-- Menu+Home+Back -->
     <integer name="config_deviceHardwareKeys">7</integer>
+
+    <bool translatable="false" name="config_wifi_p2p_support">true</bool>
 </resources>
