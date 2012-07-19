@@ -288,14 +288,14 @@ struct audio_hw_device {
     int (*set_fm_volume)(struct audio_hw_device *dev, float volume);
 #endif
 
-int (*dummy1)();
-int (*dummy2)();
     /**
      * setMode is called when the audio mode changes. AUDIO_MODE_NORMAL mode
      * is for standard audio playback, AUDIO_MODE_RINGTONE when a ringtone is
      * playing, and AUDIO_MODE_IN_CALL when a call is in progress.
      */
     int (*set_mode)(struct audio_hw_device *dev, int mode);
+int (*dummy1)();
+int (*dummy2)();
 
     /* mic mute */
     int (*set_mic_mute)(struct audio_hw_device *dev, bool state);
