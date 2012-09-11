@@ -6,6 +6,6 @@
  {
    "repository": "lge-kernel-iproj",
    "target_path": "kernel/lge/iproj",
-   "branch": "jb-vsync"
+   "branch": "android-msm-3.0-jb"
  }
 ]
