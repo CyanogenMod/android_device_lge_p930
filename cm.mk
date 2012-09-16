@@ -18,7 +18,7 @@ PRODUCT_VERSION_DEVICE_SPECIFIC :=
 ## Device identifier. This must come after all inclusions
 PRODUCT_DEVICE := p930
 
-PRODUCT_BUILD_PROP_OVERRIDES += TARGET_DEVICE=lgp930 PRODUCT_NAME=lge_iproj BUILD_FINGERPRINT=lge/lge_iproj/lgp930:2.3.5/GRJ90/LG-P930-V10f.19d9f9b804:user/release-keys PRIVATE_BUILD_DESC="i_atnt-user 2.3.5 GRJ90 eng.nick.jeong.20111031.203437 release-keys"
+PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=lge_iproj BUILD_FINGERPRINT=lge/lge_iproj/lgp930:4.0.3/IML74K/LG-P930-V18f.1c09112307:user/release-keys PRIVATE_BUILD_DESC="i_atnt-user 4.0.3 IML74K 47c54a96 release-keys"
 
 # Enable Torch
 PRODUCT_PACKAGES += Torch WiFiDirectDemo
