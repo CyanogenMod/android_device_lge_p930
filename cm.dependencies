@@ -5,7 +5,6 @@
  },
  {
    "repository": "lge-kernel-iproj",
-   "target_path": "kernel/lge/iproj",
-   "branch": "android-msm-3.0-jb"
+   "target_path": "kernel/lge/iproj"
  }
 ]
