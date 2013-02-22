@@ -1,0 +1,6 @@
+#
+# Copyright (c) 2011, LG Electronics
+#
+
+key 115   VOLUME_UP         WAKE
+key 114   VOLUME_DOWN       WAKE
