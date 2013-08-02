@@ -5,3 +5,6 @@
 /dev/block/mmcblk0p31       /mpt            ext4    nosuid,nodev,barrier=1,data=ordered wait
 /dev/block/mmcblk0p22       /tombstones     ext4    nosuid,nodev,barrier=1,data=ordered wait
 /dev/block/mmcblk0p1        /firmware       vfat    ro,shortname=lower,umask=0003 wait
+/dev/block/mmcblk0p8	    /boot           emmc    defaults      defaults
+/dev/block/mmcblk0p13       /recovery	    emmc    defaults      defaults
+/devices/platform/msm_sdcc.3/mmc_host /storage/sdcard vfat   defaults                                                        voldmanaged=sdcard:auto

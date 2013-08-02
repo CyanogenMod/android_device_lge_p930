@@ -12,3 +12,5 @@ TARGET_KERNEL_CONFIG := cyanogenmod_p930_defconfig
 TARGET_PREBUILT_KERNEL := device/lge/p930/kernel
 
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/lge/p930/bluetooth
+
+TARGET_RECOVERY_FSTAB = device/lge/p930/fstab.iprj
