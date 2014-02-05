@@ -8,4 +8,4 @@
 /dev/block/mmcblk0p14       /modem          vfat    ro,shortname=lower,uid=1000,gid=1000,dmask=227,fmask=337 wait
 /dev/block/mmcblk0p8	    /boot           emmc    defaults      defaults
 /dev/block/mmcblk0p13       /recovery	    emmc    defaults      defaults
-/devices/platform/msm_sdcc.3/mmc_host auto  vfat    defaults      voldmanaged=sdcard0:auto
+/devices/platform/msm_sdcc.3/mmc_host auto  vfat    defaults      voldmanaged=sdcard0:auto,noemulatedsd
